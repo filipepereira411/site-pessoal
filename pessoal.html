@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Filipe Pereira | Desenvolvedor Web</title>
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --accent: #38bdf8;
+            --accent-hover: #7dd3fc;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            margin: 0; padding: 0; line-height: 1.6;
+        }
+        .container { max-width: 800px; margin: 0 auto; padding: 2rem; }
+        header { text-align: center; padding: 3rem 0; border-bottom: 1px solid #334155; }
+        h1 { font-size: 2.5rem; margin-bottom: 0.5rem; }
+        .subtitle { font-size: 1.2rem; color: var(--accent); margin-bottom: 1.5rem; }
+        
+        /* Botão do GitHub com efeito Hover */
+        .btn-github {
+            display: inline-block; background-color: #24292e; color: white;
+            text-decoration: none; padding: 0.75rem 1.5rem; border-radius: 8px; 
+            font-weight: bold; transition: all 0.3s ease; border: 1px solid #334155;
+        }
+        .btn-github:hover { background-color: #334155; transform: translateY(-2px); }
+        
+        section { margin: 3rem 0; }
+        h2 { font-size: 1.8rem; border-left: 4px solid var(--accent); padding-left: 10px; margin-bottom: 1.5rem; }
+        p { color: var(--text-muted); font-size: 1.1rem; }
+        
+        /* Grelha de Competências Dinâmica */
+        .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; padding: 0; list-style: none; }
+        .skill-item { 
+            background-color: var(--card-bg); padding: 1.2rem; border-radius: 8px; 
+            text-align: center; cursor: pointer; border: 1px solid #334155; 
+            transition: all 0.3s ease; font-weight: 500;
+        }
+        .skill-item:hover { border-color: var(--accent); transform: scale(1.05); background-color: #1e293bfa; }
+        
+        /* Formulário */
+        form { display: flex; flex-direction: column; gap: 1rem; background-color: var(--card-bg); padding: 2rem; border-radius: 8px; border: 1px solid #334155; }
+        input, textarea { background-color: var(--bg-color); border: 1px solid #334155; color: var(--text-main); padding: 0.75rem; border-radius: 6px; outline: none; }
+        input:focus, textarea:focus { border-color: var(--accent); }
+        button { background-color: var(--accent); color: var(--bg-color); border: none; padding: 0.75rem; font-weight: bold; border-radius: 6px; cursor: pointer; transition: background 0.2s; }
+        button:hover { background-color: var(--accent-hover); }
+        
+        footer { text-align: center; padding: 2rem 0; color: var(--text-muted); border-top: 1px solid #334155; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Filipe Pereira</h1>
+            <div class="subtitle">Futuro Desenvolvedor Web / Entusiasta de HTML</div>
+            <a href="https://github.com/filipepereira411" target="_blank" class="btn-github">Meu GitHub</a>
+        </header>
+        <section id="sobre">
+            <h2>Sobre Mim</h2>
+            <p>Olá! Estou atualmente a explorar o mundo do desenvolvimento web. Este é o meu primeiro portfólio oficial estruturado puramente a pensar em HTML e estilizado com CSS moderno. O meu objetivo é aprender a construir plataformas modernas, seguras e interativas.</p>
+        </section>
+        <section id="competencias">
+            <h2>Competências</h2>
+            <p style="font-size: 0.95rem; margin-bottom: 1rem;">Clique em cima de qualquer competência para ver um aviso interativo:</p>
+            <ul class="skills-grid">
+                <li class="skill-item" onclick="mostrarAviso('HTML5 Semântico', 'Capacidade de estruturar páginas web de forma clara, moderna e otimizada.')">HTML5 Semântico</li>
+                <li class="skill-item" onclick="mostrarAviso('CSS3 (Design)', 'Criação de layouts responsivos, atraentes e adaptáveis a telemóveis.')">CSS3 (Design)</li>
+                <li class="skill-item" onclick="mostrarAviso('Lógica de Programação', 'Desenvolvimento de algoritmos para resolver problemas com código limpo.')">Lógica de Programação</li>
+                <li class="skill-item" onclick="mostrarAviso('Resolução de Problemas', 'Foco em encontrar as melhores soluções técnicas para desafios de software.')">Resolução de Problemas</li>
+                <li class="skill-item" onclick="mostrarAviso('Pensamento Estruturado', 'Organização mental e arquitetura de projetos de forma lógica.')">Pensamento Estruturado</li>
+            </ul>
+        </section>
+        <section id="contacto">
+            <h2>Entra em Contacto</h2>
+            <form onsubmit="enviarMensagem(event)">
+                <input type="text" value="Filipe" placeholder="O teu nome" required>
+                <input type="email" value="filipepereira.183992@etpr.pt" placeholder="O teu email" required>
+                <textarea rows="4" placeholder="Escreve a tua mensagem aqui..." required>Oi mundo!</textarea>
+                <button type="submit">Enviar Mensagem</button>
+            </form>
+        </section>
+        <footer><p>© 2026 - Criado com orgulho por Filipe Pereira</p></footer>
+    </div>
+    <script>
+        function mostrarAviso(comp, desc) { alert(`${comp}: ${desc}`); }
+        function enviarMensagem(e) { e.preventDefault(); alert("Obrigado pelo contacto, Filipe! Mensagem enviada com sucesso (Simulação)."); }
+    </script>
+</body>
+</html>
